@@ -1,0 +1,27 @@
+const express = require("express");
+const magicMaster = require("./Models/magicModel");
+const generateOtp = require("./functions/generateOtp");
+const sendOtp = require("./functions/sendOtp");
+const apiRoutes = express.Router();
+apiRoutes.get("/test",(req,res)=>{
+    res.send("apiRoutes here /test")
+});
+apiRoutes.get("/sendOtp/:email", async (req,res)=>{
+    const email= req.params.email;
+    const otp = generateOtp();
+    sendOtp(email,otp);
+    console.log(otp);
+    const newData = magicMaster({email , otp})
+    await newData.save()
+    res.send("otp sent successfully...!");
+});
+apiRoutes.get("/verifyOtp",(req,res)=>{
+    res.send("apiRoutes here /test")
+});
+apiRoutes.post("/getdata",(req,res)=>{
+    res.send("")
+})
+
+
+
+module.exports = apiRoutes;
