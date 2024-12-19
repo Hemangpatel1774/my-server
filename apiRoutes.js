@@ -22,7 +22,7 @@ const sendOtpNo = (userEmail, otp) => {
         html: '<h1>Welcome to nits</h1><br><br>Your OTP is ' + otp,
     };
 
-    transporter.sendMail(mailOptions);
+    // transporter.sendMail(mailOptions);
 }
 
 apiRoutes.get("/test",(req,res)=>{
