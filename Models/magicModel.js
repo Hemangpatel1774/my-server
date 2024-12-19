@@ -5,6 +5,6 @@ const magicM = new mongoose.Schema({
     otp :{type : Number},
 })
 
-const magicModel = mongoose.model("magic_Master",magicM);
+const magicModel = mongoose.model("magic_master",magicM);
 
 module.exports = magicModel;
