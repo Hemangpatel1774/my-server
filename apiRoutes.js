@@ -6,9 +6,9 @@ const apiRoutes = express.Router();
 apiRoutes.get("/test",(req,res)=>{
     res.send("apiRoutes here /test")
 });
-apiRoutes.get("/sendOtp/:email", async (req,res)=>{
+apiRoutes.post("/sendOtp", async (req,res)=>{
     try{
-        const email= req.params.email;
+        const email= req.body.email;
         const otp = generateOtp();
         try{
         let a = sendOtp(email,otp);
