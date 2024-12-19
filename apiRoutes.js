@@ -21,7 +21,7 @@ const sendOtpNo = (userEmail, otp) => {
         subject: 'Interview Authentication',
         html: '<h1>Welcome to nits</h1><br><br>Your OTP is ' + otp,
     };
-    return "send..!"
+    return "send..!"+userEmail
     // transporter.sendMail(mailOptions);
 }
 
