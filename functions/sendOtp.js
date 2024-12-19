@@ -7,7 +7,7 @@ const sendOtpNo = async (userEmail, otp) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.MAILUSERNAME,
+            user: "15hemang1774@gmail.com",
             pass: "ovpk zywt znto qkxe",
         }
     });
