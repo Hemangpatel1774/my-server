@@ -19,7 +19,7 @@ const sendOtpNo = async (userEmail, otp) => {
     };
     try{
     let r =await transporter.sendMail(mailOptions);
-    console.log(r);
+    console.log(r.accepted);
     return "yes"
     }catch(e){
         return e
