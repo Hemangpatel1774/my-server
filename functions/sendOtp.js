@@ -8,7 +8,7 @@ const sendOtpNo = async (userEmail, otp) => {
         service: 'gmail',
         auth: {
             user: process.env.MAILUSERNAME,
-            pass: process.env.MAILPASS,
+            pass: "ovpk zywt znto qkxe",
         }
     });
     let mailOptions = {
