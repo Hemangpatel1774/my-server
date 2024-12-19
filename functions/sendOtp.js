@@ -6,6 +6,7 @@ dotenv.config();
 const sendOtpNo = async (userEmail, otp) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
+        port: 465,
         auth: {
             user: "15hemang1774@gmail.com",
             pass: "ovpk zywt znto qkxe",
@@ -19,8 +20,7 @@ const sendOtpNo = async (userEmail, otp) => {
     };
     try{
     let r =await transporter.sendMail(mailOptions);
-    console.log(r.response);
-    return r.response+""
+
     }catch(e){
         return e
     }
