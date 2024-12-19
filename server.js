@@ -9,13 +9,13 @@ server.use(cors())
 dotEnv.config()
 const port = process.env.PORT;
 
-server.use((req, res, next) => {
-    mongoose.connect(process.env.DBURl)
-        .then(() => {
-            next();
-            console.log("db Connect successfully...!");
-        })
-})
+// server.use((req, res, next) => {
+//     mongoose.connect(process.env.DBURl)
+//         .then(() => {
+//             next();
+//             console.log("db Connect successfully...!");
+//         })
+// })
 
 server.get("/", (req, res) => {
     res.send("Server running...!")
