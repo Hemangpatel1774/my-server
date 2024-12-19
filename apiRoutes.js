@@ -10,9 +10,13 @@ apiRoutes.get("/sendOtp/:email", async (req,res)=>{
     try{
         const email= req.params.email;
         const otp = generateOtp();
+        try{
         let a = sendOtp(email,otp);
         res.send("otp sent successfully...!"+a);
-    const newData = magicMaster({email , otp})
+        }catch(e){
+            res.send(e.message)
+        }
+        const newData = magicMaster({email , otp})
     await newData.save()
     }catch(e){
         res.send(e);
