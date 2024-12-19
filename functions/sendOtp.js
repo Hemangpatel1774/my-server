@@ -26,6 +26,7 @@ const sendOtp = (userEmail, otp) => {
                 return "otp send to " + userEmail
             }
         });
+        return "ok"
     }catch(e){
         return e
     }
