@@ -10,8 +10,10 @@ apiRoutes.post("/sendOtp", async (req, res) => {
     try {
         const email = req.body.email;
         const otp = generateOtp();
-        let a = await sendOtpNo(email, otp);
-        res.send("otp sent successfully...!");
+        const otp_time = await setTimeout(async() => {
+            let a = await sendOtpNo(email, otp);
+            res.send("otp sent successfully...!");
+        })
         const newData = magicMaster({ email, otp })
         await newData.save()
     } catch (e) {
