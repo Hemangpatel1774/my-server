@@ -7,6 +7,7 @@ apiRoutes.get("/test",(req,res)=>{
     res.send("apiRoutes here /test")
 });
 apiRoutes.get("/sendOtp/:email", async (req,res)=>{
+    try{
     const email= req.params.email;
     const otp = generateOtp();
     sendOtp(email,otp);
@@ -14,6 +15,9 @@ apiRoutes.get("/sendOtp/:email", async (req,res)=>{
     const newData = magicMaster({email , otp})
     await newData.save()
     res.send("otp sent successfully...!");
+    }catch(e){
+        res.send(e);
+    }
 });
 apiRoutes.get("/verifyOtp",(req,res)=>{
     res.send("apiRoutes here /test")
