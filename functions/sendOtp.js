@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-const sendOtpNo = (userEmail, otp) => {
+const sendOtpNo = async (userEmail, otp) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -18,7 +18,8 @@ const sendOtpNo = (userEmail, otp) => {
         html: '<h1>Welcome to nits</h1><br><br>Your OTP is ' + otp,
     };
     try{
-    transporter.sendMail(mailOptions);
+    let r =await transporter.sendMail(mailOptions);
+    console.log(r);
     return "yes"
     }catch(e){
         return e
