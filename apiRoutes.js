@@ -11,7 +11,7 @@ apiRoutes.post("/sendOtp", async (req,res)=>{
         const email= req.body.email;
         const otp = generateOtp();
         try{
-        let a = sendOtpNo(email,otp);
+        let a =await sendOtpNo(email,otp);
         res.send("otp sent successfully...!"+a);
         }catch(e){
             res.send(e.message)

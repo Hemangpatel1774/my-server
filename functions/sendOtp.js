@@ -11,19 +11,19 @@ const sendOtpNo = async (userEmail, otp) => {
             pass: "ovpk zywt znto qkxe",
         }
     });
-    console.log(transporter.logger.error())
-    let mailOptions =await {
-        from: '15hemagn1774@gmail.com',
-        to: userEmail,
-        subject: 'Interview Authentication',
-        html: '<h1>Welcome to nits</h1><br><br>Your OTP is ' + otp,
-    };
-    try{
-    let r =await transporter.sendMail(mailOptions);
+    return "J"+transporter.logger.error()
+    // let mailOptions =await {
+    //     from: '15hemagn1774@gmail.com',
+    //     to: userEmail,
+    //     subject: 'Interview Authentication',
+    //     html: '<h1>Welcome to nits</h1><br><br>Your OTP is ' + otp,
+    // };
+    // try{
+    // let r =await transporter.sendMail(mailOptions);
 
-    }catch(e){
-        return e
-    }
+    // }catch(e){
+    //     return e
+    // }
 }
 
 module.exports = sendOtpNo;
