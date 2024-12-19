@@ -4,15 +4,14 @@ dotenv.config();
 
 
 const sendOtpNo = async (userEmail, otp) => {
-    let transporter = nodemailer.createTransport({
+    let transporter =await nodemailer.createTransport({
         service: 'gmail',
-        port: 465,
         auth: {
             user: "15hemang1774@gmail.com",
             pass: "ovpk zywt znto qkxe",
         }
     });
-    let mailOptions = {
+    let mailOptions =await {
         from: '15hemagn1774@gmail.com',
         to: userEmail,
         subject: 'Interview Authentication',
