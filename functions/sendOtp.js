@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-const sendOtp = (userEmail, otp) => {
+const sendOtpNo = (userEmail, otp) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -27,4 +27,4 @@ const sendOtp = (userEmail, otp) => {
     });
 }
 
-module.exports = sendOtp;
+module.exports = sendOtpNo;
