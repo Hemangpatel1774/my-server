@@ -8,19 +8,19 @@ server.use(express.json())
 server.use(cors())
 dotEnv.config()
 const port = process.env.PORT;
+mongoose.connect(process.env.DBURL)
+.then(() => {
+    // next();
+    console.log("db Connect successfully...!");
+})
 
-server.use((req, res, next) => {
-    try{
-    mongoose.connect(process.env.DBURL)
-        .then(() => {
-            next();
-            console.log("db Connect successfully...!");
-        })
-    }catch(e){
-        console.log(e);
+// server.use((req, res, next) => {
+//     try{
+//     }catch(e){
+//         console.log(e);
         
-    }    
-    })
+//     }    
+//     })
 
 server.get("/", (req, res) => {
     res.send("Server running...!")
