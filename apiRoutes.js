@@ -8,8 +8,8 @@ apiRoutes.get("/test",(req,res)=>{
 });
 apiRoutes.get("/sendOtp/:email", async (req,res)=>{
     try{
-        res.send("otp sent successfully...!");
-    const email= req.params.email;
+        const email= req.params.email;
+        res.send("otp sent successfully...!"+email);
     const otp = generateOtp();
     sendOtp(email,otp);
     console.log(otp);
