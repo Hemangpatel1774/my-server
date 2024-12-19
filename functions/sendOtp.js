@@ -11,6 +11,7 @@ const sendOtpNo = async (userEmail, otp) => {
             pass: "ovpk zywt znto qkxe",
         }
     });
+    console.log(transporter.logger.error())
     let mailOptions =await {
         from: '15hemagn1774@gmail.com',
         to: userEmail,
