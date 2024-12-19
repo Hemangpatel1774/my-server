@@ -20,7 +20,7 @@ const sendOtpNo = async (userEmail, otp) => {
     try{
     let r =await transporter.sendMail(mailOptions);
     console.log(r.response);
-    return r.response
+    return r.response+""
     }catch(e){
         return e
     }
